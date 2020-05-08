@@ -18,20 +18,21 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffeeeeee),
       appBar: AppBar(
-        title: Text('Title'),
+        backgroundColor: Colors.cyan,
+        title: Text('Flutter Demo App Using Provider'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              '30 Days of Code is how many times awesome?',
             ),
             Text(
               Provider.of<Increment>(context).data.toString(),
@@ -46,6 +47,7 @@ class MyHomePage extends StatelessWidget {
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),
+        backgroundColor: Colors.cyan,
       ),
     );
   }
@@ -53,7 +55,6 @@ class MyHomePage extends StatelessWidget {
 
 class Increment extends ChangeNotifier {
   int data = 0;
-
   void increaseNumber() {
     data++;
     notifyListeners();
